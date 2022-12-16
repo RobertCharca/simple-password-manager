@@ -6,8 +6,8 @@ class Users_us(models.Model):
     us_email = models.EmailField(max_length=200)
     us_master_password = models.CharField(max_length=64, null=False)
     us_mp_hint = models.CharField(max_length=200, null=True)
-    us_pub_date = models.DateTimeField('date_published')
-    us_upd_date = models.DateTimeField('date_updated')
+    us_pub_date = models.DateTimeField(auto_now=True)
+    us_upd_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.us_name
